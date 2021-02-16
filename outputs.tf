@@ -20,7 +20,7 @@ output "this_cloudfront_distribution_status" {
 
 output "this_cloudfront_distribution_trusted_signers" {
   description = "List of nested attributes for active trusted signers, if the distribution is set up to serve private content with signed URLs"
-  value       = element(concat(aws_cloudfront_distribution.this.*.trusted_signers, list("")), 0)
+  value       = element(concat(aws_cloudfront_distribution.this.*.active_trusted_signers, list("")), 0)
 }
 
 output "this_cloudfront_distribution_domain_name" {
